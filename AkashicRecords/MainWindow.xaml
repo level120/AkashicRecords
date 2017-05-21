@@ -1,0 +1,361 @@
+﻿<Window x:Class="AkashicRecords.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AkashicRecords"
+        mc:Ignorable="d"
+        Title="아카식레코드 시뮬레이션" Height="750" Width="1245" Background="#FF403F3F" ResizeMode="CanMinimize" Icon="Icon/ETC_0_AkashicRecordTransfer.ico">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="BtnCard" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FFB1B900"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BtnAkashic" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="Icon/ETC_0_AkashicRecordTransfer.png" Opacity="0.3"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BtnHighAkashic" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="Icon/ETC_0_HighAkashicRecordTransfer.png" Opacity="0.3"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BtnClick" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="button.png" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Background" TargetName="border" Value="{x:Null}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="button2.png" Stretch="None"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{x:Null}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="Layout">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="85*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Margin="10" StrokeThickness="3" RadiusX="5" RadiusY="5">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF322D2D"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Margin="10,0,10,7" Grid.Row="1" Stroke="#FF839B19" StrokeThickness="3" RadiusX="5" RadiusY="5"/>
+
+        <Grid x:Name="Card" Margin="10" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <Grid.Background>
+                <ImageBrush/>
+            </Grid.Background>
+            <Button x:Name="akashic1" Content="" HorizontalAlignment="Left" Margin="41,35.5,0,0" Width="179.765" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Top" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="akashic2" Content="" HorizontalAlignment="Left" Margin="276.5,35.5,0,0" Width="179.765" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Top" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="akashic3" Content="" Margin="527,35.5,510.235,0" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Top" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="akashic4" Content="" HorizontalAlignment="Right" Margin="0,35.5,271.735,0" Width="179.765" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Top" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="akashic5" Content="" HorizontalAlignment="Right" Margin="0,35.5,37.735,0" Width="179.765" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Top" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="akashic6" Content="" HorizontalAlignment="Left" Margin="41,0,0,6.5" Width="179.765" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Bottom" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="akashic7" Content="" HorizontalAlignment="Left" Margin="276.5,0,0,6.5" Width="179.765" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Bottom" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="akashic8" Content="" Margin="527,0,510.235,6.5" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Bottom" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="akashic9" Content="" HorizontalAlignment="Right" Margin="0,0,271.735,6.5" Width="179.765" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Bottom" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="akashic10" Content="" HorizontalAlignment="Right" Margin="0,0,37.735,6.5" Width="179.765" BorderBrush="{x:Null}" Height="238.5" VerticalAlignment="Bottom" Style="{DynamicResource BtnCard}">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/0.png"/>
+                </Button.Background>
+            </Button>
+            <Image x:Name="img_card1" HorizontalAlignment="Left" Height="50" Margin="75.5,-7.5,0,0" VerticalAlignment="Top" Width="109.223" Source="grade.png" Stretch="Fill" Visibility="Hidden"/>
+            <Image x:Name="img_card2" HorizontalAlignment="Left" Height="50" Margin="312.5,-7.5,0,0" VerticalAlignment="Top" Width="109.223" Source="grade.png" Stretch="Fill" Visibility="Hidden"/>
+            <Image x:Name="img_card3" Height="50" Margin="564.5,-7.5,545.277,0" VerticalAlignment="Top" Source="grade.png" Stretch="Fill" Visibility="Hidden"/>
+            <Image x:Name="img_card4" Height="50" Margin="0,-7.5,305.277,0" VerticalAlignment="Top" Source="grade.png" Stretch="Fill" HorizontalAlignment="Right" Width="109.223" Visibility="Hidden"/>
+            <Image x:Name="img_card5" Height="50" Margin="0,-7.5,68.277,0" VerticalAlignment="Top" Source="grade.png" Stretch="Fill" HorizontalAlignment="Right" Width="109.223" Visibility="Hidden"/>
+            <Image x:Name="img_card6" HorizontalAlignment="Left" Margin="75.5,0,0,237.5" Width="109.223" Source="grade.png" Stretch="Fill" Height="50" VerticalAlignment="Bottom" Visibility="Hidden"/>
+            <Image x:Name="img_card7" HorizontalAlignment="Left" Margin="312.5,0,0,237.5" Width="109.223" Source="grade.png" Stretch="Fill" Height="50" VerticalAlignment="Bottom" Visibility="Hidden"/>
+            <Image x:Name="img_card8" Margin="564.5,0,545.277,237.5" Source="grade.png" Stretch="Fill" Height="50" VerticalAlignment="Bottom" Visibility="Hidden"/>
+            <Image x:Name="img_card9" Margin="0,0,305.277,237.5" Source="grade.png" Stretch="Fill" HorizontalAlignment="Right" Width="109.223" Height="50" VerticalAlignment="Bottom" Visibility="Hidden"/>
+            <Image x:Name="img_card10" Margin="0,0,68.277,237.5" Source="grade.png" Stretch="Fill" HorizontalAlignment="Right" Width="109.223" Height="50" VerticalAlignment="Bottom" Visibility="Hidden"/>
+        </Grid>
+
+        <Grid x:Name="Top" Margin="10" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+            <Button x:Name="btn_10p" Content="10 X 사용" VerticalAlignment="Top" Margin="458.398,33,0,0" Click="btn_10p_Click" Height="25" ToolTip="아카식레코드 10장을 개봉합니다." BorderBrush="{x:Null}" Foreground="#FFBFBFBF" FontWeight="Bold" Style="{DynamicResource BtnClick}" HorizontalAlignment="Left" Width="120">
+                <Button.Background>
+                    <ImageBrush ImageSource="button.png" Stretch="None"/>
+                </Button.Background>
+            </Button>
+
+            <Label x:Name="label_cost" Content="단가(원)" HorizontalAlignment="Left" Height="27" Margin="30,29,0,0" VerticalAlignment="Top" Width="55.5" Foreground="#FFB9B9B9" FontWeight="Bold"/>
+            <Button x:Name="btn_reset" Content="초기화" VerticalAlignment="Bottom" Margin="458.398,0,0,13" Click="btn_reset_Click" Height="25" d:LayoutOverrides="VerticalAlignment" ToolTip="원래 설정값으로 되돌립니다." Foreground="#FFBFBFBF" BorderBrush="{x:Null}" FontWeight="Bold" Style="{DynamicResource BtnClick}" HorizontalAlignment="Left" Width="120">
+                <Button.Background>
+                    <ImageBrush ImageSource="button.png" Stretch="None"/>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="tb_cost" HorizontalAlignment="Left" Height="23" Margin="112,33,0,0" TextWrapping="Wrap" Text="900" VerticalAlignment="Top" Width="120" TextAlignment="Center"/>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="74" Margin="766,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="74" Margin="786,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy1" HorizontalAlignment="Left" Height="74" Margin="855,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy2" HorizontalAlignment="Left" Height="74" Margin="874,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy3" HorizontalAlignment="Left" Height="74" Margin="894,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy4" HorizontalAlignment="Left" Height="74" Margin="938,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy5" HorizontalAlignment="Left" Height="74" Margin="959,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy6" HorizontalAlignment="Left" Height="74" Margin="980,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy7" HorizontalAlignment="Left" Height="74" Margin="1000,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy8" HorizontalAlignment="Left" Height="74" Margin="1026,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy9" HorizontalAlignment="Left" Height="74" Margin="1047,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy10" HorizontalAlignment="Left" Height="74" Margin="1067,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy11" HorizontalAlignment="Left" Height="74" Margin="1087,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <Image x:Name="image_Copy12" HorizontalAlignment="Left" Height="74" Margin="1107,-18,0,0" VerticalAlignment="Top" Width="109" Source="Images/star.png"/>
+            <TextBox x:Name="tb_rand2" HorizontalAlignment="Left" Height="23" Margin="754,33,0,0" TextWrapping="Wrap" Text="89.1" VerticalAlignment="Top" Width="81" TextAlignment="Center"/>
+            <TextBox x:Name="tb_rand3" HorizontalAlignment="Left" Height="23" Margin="852,33,0,0" TextWrapping="Wrap" Text="8.9" VerticalAlignment="Top" Width="80" TextAlignment="Center"/>
+            <TextBox x:Name="tb_rand4" HorizontalAlignment="Left" Height="23" Margin="949,33,0,0" TextWrapping="Wrap" Text="1.3" VerticalAlignment="Top" Width="80" TextAlignment="Center"/>
+            <TextBox x:Name="tb_rand5" HorizontalAlignment="Left" Height="23" Margin="1044,33,0,0" TextWrapping="Wrap" Text="0.7" VerticalAlignment="Top" Width="81" TextAlignment="Center"/>
+            <Label x:Name="label_rand" Content="확률" HorizontalAlignment="Left" Height="27" Margin="708,29,0,0" VerticalAlignment="Top" Width="55" Foreground="#FFB9B9B9" FontWeight="Bold"/>
+            <Label x:Name="label_rand_Copy" Content="결과" HorizontalAlignment="Left" Height="27" Margin="708,66,0,0" VerticalAlignment="Top" Width="55" Foreground="#FFB9B9B9" FontWeight="Bold"/>
+            <TextBox x:Name="tb_rand2_res" HorizontalAlignment="Left" Height="23" Margin="754,70,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="81" TextAlignment="Center" IsEnabled="False"/>
+            <TextBox x:Name="tb_rand3_res" HorizontalAlignment="Left" Height="23" Margin="852,70,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" TextAlignment="Center" IsEnabled="False"/>
+            <TextBox x:Name="tb_rand4_res" HorizontalAlignment="Left" Height="23" Margin="949,70,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" TextAlignment="Center" IsEnabled="False"/>
+            <TextBox x:Name="tb_rand5_res" HorizontalAlignment="Left" Height="23" Margin="1044,70,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="81" TextAlignment="Center" IsEnabled="False"/>
+            <Label x:Name="label_cost_Copy" Content="금액(원)" HorizontalAlignment="Left" Height="27" Margin="30,66,0,0" VerticalAlignment="Top" Width="55" Foreground="#FFB9B9B9" FontWeight="Bold"/>
+            <TextBox x:Name="tb_cost_res" HorizontalAlignment="Left" Height="23" Margin="112,70,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextAlignment="Center" IsEnabled="False"/>
+            <Button x:Name="btn_akashic" Content="" HorizontalAlignment="Left" Margin="245,33,0,13" Width="60" RenderTransformOrigin="0.075,0.475" BorderBrush="{x:Null}" ToolTip="일반 아카식레코드 확률로 맞춥니다." Style="{DynamicResource BtnAkashic}" Click="btn_akashic_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Icon/ETC_0_AkashicRecordTransfer.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btn_highakashic" Content="" HorizontalAlignment="Left" Margin="379,33,0,13" Width="60" RenderTransformOrigin="0.075,0.475" BorderBrush="{x:Null}" ToolTip="고급 아카식레코드 확률로 맞춥니다." Style="{DynamicResource BtnHighAkashic}" Click="btn_highakashic_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Icon/ETC_0_HighAkashicRecordTransfer.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btn_limitakashic" Content="" HorizontalAlignment="Left" Margin="312,33,0,13" Width="60" RenderTransformOrigin="0.075,0.475" BorderBrush="{x:Null}" ToolTip="한정 아카식레코드로 맞춥니다." Style="{DynamicResource BtnAkashic}" Click="btn_limitakashic_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="Icon/ETC_0_LimitedARTransfer.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Button x:Name="btn_test" Content="5성 자동" HorizontalAlignment="Left" Height="25" Margin="590.5,42.48,0,0" VerticalAlignment="Top" Width="120" Click="btn_test_Click" Style="{DynamicResource BtnClick}" Foreground="#FFBFBFBF" FontWeight="Bold" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush Stretch="None" ImageSource="button.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn_test_hidden" Content="5성 히든" HorizontalAlignment="Left" Height="25" Margin="590.5,78.48,0,0" VerticalAlignment="Top" Width="120" Style="{DynamicResource BtnClick}" Foreground="#FFBFBFBF" FontWeight="Bold" BorderBrush="{x:Null}" Click="btn_test_hidden_Click">
+            <Button.Background>
+                <ImageBrush Stretch="None" ImageSource="button.png"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

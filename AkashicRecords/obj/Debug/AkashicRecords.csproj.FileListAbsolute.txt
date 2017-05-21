@@ -1,0 +1,27 @@
+F:\Games\AkashicRecords\AkashicRecords\bin\Debug\AkashicRecords.exe.config
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.exe
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.pdb
+F:\Games\AkashicRecords\AkashicRecords\bin\Debug\AkashicRecords.exe
+F:\Games\AkashicRecords\AkashicRecords\bin\Debug\AkashicRecords.pdb
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.csprojResolveAssemblyReference.cache
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\MainWindow.g.cs
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\App.g.cs
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords_MarkupCompile.cache
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords_MarkupCompile.lref
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\MainWindow.baml
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.g.resources
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.Properties.Resources.resources
+F:\Games\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.csproj.GenerateResource.Cache
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\bin\Debug\AkashicRecords.exe.config
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\bin\Debug\AkashicRecords.exe
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\bin\Debug\AkashicRecords.pdb
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\MainWindow.g.cs
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\App.g.cs
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords_MarkupCompile.cache
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords_MarkupCompile.lref
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\MainWindow.baml
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.g.resources
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.Properties.Resources.resources
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.csproj.GenerateResource.Cache
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.exe
+C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.pdb

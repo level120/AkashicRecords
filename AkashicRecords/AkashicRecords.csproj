@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7C2946C-552C-4B86-BF57-2A8B2FADD86F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AkashicRecords</RootNamespace>
+    <AssemblyName>AkashicRecords</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon\ETC_0_AkashicRecordTransfer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\201.png" />
+    <Resource Include="Images\202.png" />
+    <Resource Include="Images\203.png" />
+    <Resource Include="Images\204.png" />
+    <Resource Include="Images\205.png" />
+    <Resource Include="Images\206.png" />
+    <Resource Include="Images\207.png" />
+    <Resource Include="Images\208.png" />
+    <Resource Include="Images\209.png" />
+    <Resource Include="Images\210.png" />
+    <Resource Include="Images\211.png" />
+    <Resource Include="Images\212.png" />
+    <Resource Include="Images\213.png" />
+    <Resource Include="Images\214.png" />
+    <Resource Include="Images\215.png" />
+    <Resource Include="Images\216.png" />
+    <Resource Include="Images\217.png" />
+    <Resource Include="Images\218.png" />
+    <Resource Include="Images\219.png" />
+    <Resource Include="Images\220.png" />
+    <Resource Include="Images\221.png" />
+    <Resource Include="Images\222.png" />
+    <Resource Include="Images\223.png" />
+    <Resource Include="Images\224.png" />
+    <Resource Include="Images\225.png" />
+    <Resource Include="Images\226.png" />
+    <Resource Include="Images\227.png" />
+    <Resource Include="Images\228.png" />
+    <Resource Include="Images\229.png" />
+    <Resource Include="Images\230.png" />
+    <Resource Include="Images\231.png" />
+    <Resource Include="Images\232.png" />
+    <Resource Include="Images\233.png" />
+    <Resource Include="Images\234.png" />
+    <Resource Include="Images\235.png" />
+    <Resource Include="Images\236.png" />
+    <Resource Include="Images\237.png" />
+    <Resource Include="Images\238.png" />
+    <Resource Include="Images\239.png" />
+    <Resource Include="Images\240.png" />
+    <Resource Include="Images\241.png" />
+    <Resource Include="Images\242.png" />
+    <Resource Include="Images\243.png" />
+    <Resource Include="Images\244.png" />
+    <Resource Include="Images\245.png" />
+    <Resource Include="Images\246.png" />
+    <Resource Include="Images\247.png" />
+    <Resource Include="Images\248.png" />
+    <Resource Include="Images\249.png" />
+    <Resource Include="Images\250.png" />
+    <Resource Include="Images\251.png" />
+    <Resource Include="Images\252.png" />
+    <Resource Include="Images\253.png" />
+    <Resource Include="Images\254.png" />
+    <Resource Include="Images\255.png" />
+    <Resource Include="Images\256.png" />
+    <Resource Include="Images\257.png" />
+    <Resource Include="Images\258.png" />
+    <Resource Include="Images\259.png" />
+    <Resource Include="Images\260.png" />
+    <Resource Include="Images\261.png" />
+    <Resource Include="Images\262.png" />
+    <Resource Include="Images\263.png" />
+    <Resource Include="Images\264.png" />
+    <Resource Include="Images\301.png" />
+    <Resource Include="Images\302.png" />
+    <Resource Include="Images\303.png" />
+    <Resource Include="Images\304.png" />
+    <Resource Include="Images\305.png" />
+    <Resource Include="Images\306.png" />
+    <Resource Include="Images\307.png" />
+    <Resource Include="Images\308.png" />
+    <Resource Include="Images\309.png" />
+    <Resource Include="Images\310.png" />
+    <Resource Include="Images\311.png" />
+    <Resource Include="Images\401.png" />
+    <Resource Include="Images\402.png" />
+    <Resource Include="Images\403.png" />
+    <Resource Include="Images\404.png" />
+    <Resource Include="Images\405.png" />
+    <Resource Include="Images\406.png" />
+    <Resource Include="Images\501.png" />
+    <Resource Include="Images\502.png" />
+    <Resource Include="Images\503.png" />
+    <Resource Include="Images\504.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\ETC_0_AkashicRecordTransfer.png" />
+    <Resource Include="Icon\ETC_0_HighAkashicRecordTransfer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\ETC_0_AkashicRecordTransfer.ico" />
+    <Resource Include="Icon\ETC_0_HighAkashicRecordTransfer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="grade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\312.png" />
+    <Resource Include="Images\313.png" />
+    <Resource Include="Images\314.png" />
+    <Resource Include="Images\315.png" />
+    <Resource Include="Images\316.png" />
+    <Resource Include="Images\317.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\ETC_0_LimitedARTransfer.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
