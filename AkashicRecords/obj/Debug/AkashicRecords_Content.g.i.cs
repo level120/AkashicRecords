@@ -8,6 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icon/etc_0_limitedartransfer.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/407.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/408.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/409.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/410.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/505.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/506.png")]
 
 

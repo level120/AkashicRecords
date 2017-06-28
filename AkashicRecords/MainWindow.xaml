@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AkashicRecords"
         mc:Ignorable="d"
-        Title="아카식레코드 시뮬레이션" Height="750" Width="1245" Background="#FF403F3F" ResizeMode="CanMinimize" Icon="Icon/ETC_0_AkashicRecordTransfer.ico">
+        Title="아카식레코드 시뮬레이터" Height="750" Width="1245" Background="#FF403F3F" ResizeMode="CanMinimize" Icon="Icon/ETC_0_AkashicRecordTransfer.ico">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">

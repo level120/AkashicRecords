@@ -220,5 +220,13 @@
   <ItemGroup>
     <Resource Include="Icon\ETC_0_LimitedARTransfer.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\407.png" />
+    <Resource Include="Images\408.png" />
+    <Resource Include="Images\409.png" />
+    <Resource Include="Images\410.png" />
+    <Resource Include="Images\505.png" />
+    <Resource Include="Images\506.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

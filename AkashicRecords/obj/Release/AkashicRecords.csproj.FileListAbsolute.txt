@@ -24,3 +24,16 @@ C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecor
 C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.csproj.GenerateResource.Cache
 C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.exe
 C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.pdb
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\bin\Release\AkashicRecords.exe.config
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\bin\Release\AkashicRecords.exe
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\bin\Release\AkashicRecords.pdb
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\MainWindow.g.cs
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\App.g.cs
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords_MarkupCompile.cache
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords_MarkupCompile.lref
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\MainWindow.baml
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.g.resources
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.Properties.Resources.resources
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.csproj.GenerateResource.Cache
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.exe
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.pdb

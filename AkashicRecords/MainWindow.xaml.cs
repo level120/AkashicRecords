@@ -23,8 +23,12 @@ namespace AkashicRecords
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int star_2 = 64;
+        private int star_3 = 10;  // 미리엄 제외
+        private int star_4 = 10;
+        private int star_5 = 6;
         private int price = 0;
-        private int limit_edition = 10;
+        private int select_mode = 1;
         private bool find = false;
         private bool flag = false;
 
@@ -151,7 +155,7 @@ namespace AkashicRecords
 
         public int select_card(int star, Random akashic)  // 카드 뽑기
         {
-            int[] limit = new int[4] { 64, limit_edition, 6, 4 };
+            int[] limit = new int[4] { star_2, star_3, star_4, star_5 };
             int hid = akashic.Next(0, 1000);
 
             int res = 0;
@@ -173,16 +177,16 @@ namespace AkashicRecords
         {
             title_hide();
 
-            tb_cost.Text = "900";
-
-            tb_rand2.Text = "89.1";
-            tb_rand3.Text = "8.9";
-            tb_rand4.Text = "1.3";
-            tb_rand5.Text = "0.7";
+            if ( select_mode == 1 )
+                akashic_work();
+            else if ( select_mode == 2 )
+                limitakashic_work();
+            else if ( select_mode == 3 )
+                highakashic_work();
 
             tb_rand2_res.Text = tb_rand3_res.Text = tb_rand4_res.Text = tb_rand5_res.Text = tb_cost_res.Text = "0";
             this.price = 0;
-            this.limit_edition = 10;
+            this.find = this.flag = false;
 
             init_akashic(akashic1);
             init_akashic(akashic2);
@@ -226,6 +230,21 @@ namespace AkashicRecords
 
         private void btn_akashic_Click(object sender, RoutedEventArgs e)
         {
+            akashic_work();
+        }
+
+        private void btn_limitakashic_Click( object sender, RoutedEventArgs e )
+        {
+            limitakashic_work();
+        }
+
+        private void btn_highakashic_Click(object sender, RoutedEventArgs e)
+        {
+            highakashic_work();
+        }
+
+        private void akashic_work()
+        {
             label_cost.Content = "단가(원)";
             label_cost_Copy.Content = "금액(원)";
             tb_cost.Text = "900";
@@ -235,10 +254,30 @@ namespace AkashicRecords
             tb_rand4.Text = "1.3";
             tb_rand5.Text = "0.7";
             this.price = 0;
-            this.limit_edition = 10;
+            this.star_3 = 10;
+            this.select_mode = 1;
+
+            this.Title = @"아카식레코드 시뮬레이터 - 일반 아카식 모드";
         }
 
-        private void btn_highakashic_Click(object sender, RoutedEventArgs e)
+        private void limitakashic_work()
+        {
+            label_cost.Content = "단가(원)";
+            label_cost_Copy.Content = "금액(원)";
+            tb_cost.Text = "900";
+            tb_cost_res.Text = "0";
+            tb_rand2.Text = "89.1";
+            tb_rand3.Text = "8.9";
+            tb_rand4.Text = "1.3";
+            tb_rand5.Text = "0.7";
+            this.price = 0;
+            this.star_3 = 16;
+            this.select_mode = 2;
+
+            this.Title = @"아카식레코드 시뮬레이터 - 한정 아카식 모드";
+        }
+
+        private void highakashic_work()
         {
             label_cost.Content = "단위(장)";
             label_cost_Copy.Content = "합계(장)";
@@ -249,7 +288,10 @@ namespace AkashicRecords
             tb_rand4.Text = "9";
             tb_rand5.Text = "1";
             this.price = 0;
-            this.limit_edition = 10;
+            this.star_3 = 10;
+            this.select_mode = 3;
+
+            this.Title = @"아카식레코드 시뮬레이터 - 고급 아카식 모드";
         }
 
         private void btn_test_Click(object sender, RoutedEventArgs e)
@@ -291,20 +333,6 @@ namespace AkashicRecords
             MessageBox.Show("5성 히든카드 발견!", null, MessageBoxButton.OK, MessageBoxImage.Asterisk);
             this.find = this.flag = false;
             btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = true;
-        }
-
-        private void btn_limitakashic_Click( object sender, RoutedEventArgs e )
-        {
-            label_cost.Content = "단가(원)";
-            label_cost_Copy.Content = "금액(원)";
-            tb_cost.Text = "900";
-            tb_cost_res.Text = "0";
-            tb_rand2.Text = "89.1";
-            tb_rand3.Text = "8.9";
-            tb_rand4.Text = "1.3";
-            tb_rand5.Text = "0.7";
-            this.price = 0;
-            this.limit_edition = 16;
         }
     }
 }
