@@ -37,6 +37,7 @@
     <ApplicationIcon>Icon\ETC_0_AkashicRecordTransfer.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -57,6 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CardList.cs" />
+    <Compile Include="Result.xaml.cs">
+      <DependentUpon>Result.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -65,10 +70,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Card.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Result.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -165,8 +175,6 @@
     <Resource Include="Images\260.png" />
     <Resource Include="Images\261.png" />
     <Resource Include="Images\262.png" />
-    <Resource Include="Images\263.png" />
-    <Resource Include="Images\264.png" />
     <Resource Include="Images\301.png" />
     <Resource Include="Images\302.png" />
     <Resource Include="Images\303.png" />
@@ -227,6 +235,127 @@
     <Resource Include="Images\410.png" />
     <Resource Include="Images\505.png" />
     <Resource Include="Images\506.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Star\201.png" />
+    <Resource Include="Images\Star\202.png" />
+    <Resource Include="Images\Star\203.png" />
+    <Resource Include="Images\Star\204.png" />
+    <Resource Include="Images\Star\205.png" />
+    <Resource Include="Images\Star\206.png" />
+    <Resource Include="Images\Star\207.png" />
+    <Resource Include="Images\Star\208.png" />
+    <Resource Include="Images\Star\209.png" />
+    <Resource Include="Images\Star\210.png" />
+    <Resource Include="Images\Star\211.png" />
+    <Resource Include="Images\Star\212.png" />
+    <Resource Include="Images\Star\213.png" />
+    <Resource Include="Images\Star\214.png" />
+    <Resource Include="Images\Star\215.png" />
+    <Resource Include="Images\Star\216.png" />
+    <Resource Include="Images\Star\217.png" />
+    <Resource Include="Images\Star\218.png" />
+    <Resource Include="Images\Star\219.png" />
+    <Resource Include="Images\Star\220.png" />
+    <Resource Include="Images\Star\221.png" />
+    <Resource Include="Images\Star\222.png" />
+    <Resource Include="Images\Star\223.png" />
+    <Resource Include="Images\Star\224.png" />
+    <Resource Include="Images\Star\225.png" />
+    <Resource Include="Images\Star\226.png" />
+    <Resource Include="Images\Star\227.png" />
+    <Resource Include="Images\Star\228.png" />
+    <Resource Include="Images\Star\229.png" />
+    <Resource Include="Images\Star\230.png" />
+    <Resource Include="Images\Star\231.png" />
+    <Resource Include="Images\Star\232.png" />
+    <Resource Include="Images\Star\233.png" />
+    <Resource Include="Images\Star\234.png" />
+    <Resource Include="Images\Star\235.png" />
+    <Resource Include="Images\Star\236.png" />
+    <Resource Include="Images\Star\237.png" />
+    <Resource Include="Images\Star\238.png" />
+    <Resource Include="Images\Star\239.png" />
+    <Resource Include="Images\Star\240.png" />
+    <Resource Include="Images\Star\241.png" />
+    <Resource Include="Images\Star\242.png" />
+    <Resource Include="Images\Star\243.png" />
+    <Resource Include="Images\Star\244.png" />
+    <Resource Include="Images\Star\245.png" />
+    <Resource Include="Images\Star\246.png" />
+    <Resource Include="Images\Star\247.png" />
+    <Resource Include="Images\Star\248.png" />
+    <Resource Include="Images\Star\249.png" />
+    <Resource Include="Images\Star\250.png" />
+    <Resource Include="Images\Star\251.png" />
+    <Resource Include="Images\Star\252.png" />
+    <Resource Include="Images\Star\253.png" />
+    <Resource Include="Images\Star\254.png" />
+    <Resource Include="Images\Star\255.png" />
+    <Resource Include="Images\Star\256.png" />
+    <Resource Include="Images\Star\257.png" />
+    <Resource Include="Images\Star\258.png" />
+    <Resource Include="Images\Star\259.png" />
+    <Resource Include="Images\Star\260.png" />
+    <Resource Include="Images\Star\261.png" />
+    <Resource Include="Images\Star\262.png" />
+    <Resource Include="Images\Star\301.png" />
+    <Resource Include="Images\Star\302.png" />
+    <Resource Include="Images\Star\303.png" />
+    <Resource Include="Images\Star\304.png" />
+    <Resource Include="Images\Star\305.png" />
+    <Resource Include="Images\Star\306.png" />
+    <Resource Include="Images\Star\307.png" />
+    <Resource Include="Images\Star\308.png" />
+    <Resource Include="Images\Star\309.png" />
+    <Resource Include="Images\Star\310.png" />
+    <Resource Include="Images\Star\311.png" />
+    <Resource Include="Images\Star\312.png" />
+    <Resource Include="Images\Star\313.png" />
+    <Resource Include="Images\Star\314.png" />
+    <Resource Include="Images\Star\315.png" />
+    <Resource Include="Images\Star\316.png" />
+    <Resource Include="Images\Star\317.png" />
+    <Resource Include="Images\Star\318.png" />
+    <Resource Include="Images\Star\319.png" />
+    <Resource Include="Images\Star\401.png" />
+    <Resource Include="Images\Star\402.png" />
+    <Resource Include="Images\Star\403.png" />
+    <Resource Include="Images\Star\404.png" />
+    <Resource Include="Images\Star\405.png" />
+    <Resource Include="Images\Star\406.png" />
+    <Resource Include="Images\Star\407.png" />
+    <Resource Include="Images\Star\408.png" />
+    <Resource Include="Images\Star\409.png" />
+    <Resource Include="Images\Star\410.png" />
+    <Resource Include="Images\Star\501.png" />
+    <Resource Include="Images\Star\502.png" />
+    <Resource Include="Images\Star\503.png" />
+    <Resource Include="Images\Star\504.png" />
+    <Resource Include="Images\Star\505.png" />
+    <Resource Include="Images\Star\506.png" />
+    <Resource Include="Images\Star\507.png" />
+    <Resource Include="Images\Star\508.png" />
+    <Resource Include="Images\Star\509.png" />
+    <Resource Include="Images\Star\510.png" />
+    <Resource Include="Images\Star\511.png" />
+    <Resource Include="Images\Star\512.png" />
+    <Resource Include="Images\Star\601.png" />
+    <Resource Include="Images\Star\602.png" />
+    <Resource Include="Images\Star\603.png" />
+    <Resource Include="Images\Star\604.png" />
+    <Resource Include="Images\Star\605.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\507.png" />
+    <Resource Include="Images\508.png" />
+    <Resource Include="Images\509.png" />
+    <Resource Include="Images\510.png" />
+    <Resource Include="Images\511.png" />
+    <Resource Include="Images\512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Maze_21_Trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

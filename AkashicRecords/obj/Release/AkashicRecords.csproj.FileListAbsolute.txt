@@ -28,10 +28,13 @@ D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\bin\Release\Ak
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\bin\Release\AkashicRecords.exe
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\bin\Release\AkashicRecords.pdb
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\MainWindow.g.cs
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\Result.g.cs
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\App.g.cs
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\GeneratedInternalTypeHelper.g.cs
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords_MarkupCompile.cache
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords_MarkupCompile.lref
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\MainWindow.baml
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\Result.baml
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.g.resources
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.Properties.Resources.resources
 D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Release\AkashicRecords.csproj.GenerateResource.Cache

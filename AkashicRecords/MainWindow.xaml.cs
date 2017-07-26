@@ -23,18 +23,41 @@ namespace AkashicRecords
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int star_2 = 64;
-        private int star_3 = 10;  // 미리엄 제외
-        private int star_4 = 10;
-        private int star_5 = 6;
+        CardList temp;
+        public enum limit
+        {
+            star2 = 62,
+            star3 = 12,
+            star4 = 10,
+            star5 = 6,
+            limit = 6
+        }
+        public static int SIZE = ( int )limit.limit + ( int )limit.star2 + ( int )limit.star3 + ( int )limit.star4 + ( int )limit.star5;
+        private int star_2 = ( int )limit.star2;
+        private int star_3 = ( int )limit.star3;  // 미리엄 제외
+        private int star_4 = ( int )limit.star4;
+        private int star_5 = ( int )limit.star5;
         private int price = 0;
         private int select_mode = 1;
+        private int all_count = 0;
         private bool find = false;
         private bool flag = false;
+        private List<Card> card;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            temp = new CardList();
+            card = new List<AkashicRecords.Card>(SIZE);
+
+            for (int i=0, n=200, k=1; i<SIZE; i++, k++ )
+            {
+                if ( i == ( int )limit.star2 ) { n = 300; k = 1; }
+                else if ( i == ( int )limit.star2 + ( int )limit.star3 + ( int )limit.limit + 1 ) { n = 400; k = 1; }
+                else if ( i == ( int )limit.star2 + ( int )limit.star3 + ( int )limit.star4 + ( int )limit.limit  + 1 ) { n = 500; k = 1; }
+                card.Add( new AkashicRecords.Card( @"Images/Star/" + (n + k) + @".png", CardList.card_list[ i ].star, CardList.card_list[ i ].name ) );
+            }
         }
 
         public void cost()  // 천 단위 표시
@@ -110,7 +133,30 @@ namespace AkashicRecords
 
             if (number < 0) return;
 
-            url += "" + select_card(number, akashic) + ".png";
+            int res = select_card( number, akashic );
+            url += "" + res + ".png";
+
+            int index = -1;
+
+            if ( number == 2 )
+            {
+                index = res - 201;
+            }
+            else if (number == 3 )
+            {
+                index = res + ( int )limit.star2 - 301;
+            }
+            else if ( number == 4 )
+            {
+                index = res + ( int )limit.star2 + ( int )limit.star3 + ( int )limit.limit + 1 - 401;
+            }
+            else if ( number == 5 )
+            {
+                index = res + ( int )limit.star2 + ( int )limit.star3 + ( int )limit.star4 + ( int )limit.limit + 1 - 501;
+            }
+            
+            card[ index ].count++;
+            all_count++;
 
             Uri resourceUri = new Uri(url, UriKind.Relative);
             StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
@@ -185,7 +231,7 @@ namespace AkashicRecords
                 highakashic_work();
 
             tb_rand2_res.Text = tb_rand3_res.Text = tb_rand4_res.Text = tb_rand5_res.Text = tb_cost_res.Text = "0";
-            this.price = 0;
+            this.price = this.all_count = 0;
             this.find = this.flag = false;
 
             init_akashic(akashic1);
@@ -198,6 +244,11 @@ namespace AkashicRecords
             init_akashic(akashic8);
             init_akashic(akashic9);
             init_akashic(akashic10);
+
+            foreach ( var i in card)
+            {
+                i.count = 0;
+            }
         }
 
         public void title_show()
@@ -254,7 +305,7 @@ namespace AkashicRecords
             tb_rand4.Text = "1.3";
             tb_rand5.Text = "0.7";
             this.price = 0;
-            this.star_3 = 10;
+            this.star_3 = ( int )limit.star3;
             this.select_mode = 1;
 
             this.Title = @"아카식레코드 시뮬레이터 - 일반 아카식 모드";
@@ -271,7 +322,7 @@ namespace AkashicRecords
             tb_rand4.Text = "1.3";
             tb_rand5.Text = "0.7";
             this.price = 0;
-            this.star_3 = 16;
+            this.star_3 = ( int )limit.star3 + ( int )limit.limit;
             this.select_mode = 2;
 
             this.Title = @"아카식레코드 시뮬레이터 - 한정 아카식 모드";
@@ -288,7 +339,7 @@ namespace AkashicRecords
             tb_rand4.Text = "9";
             tb_rand5.Text = "1";
             this.price = 0;
-            this.star_3 = 10;
+            this.star_3 = ( int )limit.star3;
             this.select_mode = 3;
 
             this.Title = @"아카식레코드 시뮬레이터 - 고급 아카식 모드";
@@ -333,6 +384,12 @@ namespace AkashicRecords
             MessageBox.Show("5성 히든카드 발견!", null, MessageBoxButton.OK, MessageBoxImage.Asterisk);
             this.find = this.flag = false;
             btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = true;
+        }
+
+        private void Button_Click( object sender, RoutedEventArgs e )
+        {
+            Result res = new Result( card, all_count );
+            res.Show();
         }
     }
 }
