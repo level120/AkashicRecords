@@ -25,3 +25,20 @@ C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecor
 C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.csproj.GenerateResource.Cache
 C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.exe
 C:\Users\tnara\Documents\Visual Studio 2017\Projects\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.pdb
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\bin\Debug\AkashicRecords.exe.config
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\bin\Debug\AkashicRecords.exe
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\bin\Debug\AkashicRecords.pdb
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.csprojResolveAssemblyReference.cache
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\MainWindow.g.cs
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\Result.g.cs
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\App.g.cs
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords_MarkupCompile.cache
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords_MarkupCompile.lref
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\MainWindow.baml
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\Result.baml
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.g.resources
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.Properties.Resources.resources
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.csproj.GenerateResource.Cache
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.exe
+D:\OneDrive\Images\Games\SoulWorker\AkashicRecords\AkashicRecords\obj\Debug\AkashicRecords.pdb
