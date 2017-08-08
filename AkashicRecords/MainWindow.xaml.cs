@@ -38,7 +38,7 @@ namespace AkashicRecords
         private int star_3 = ( int )limit.star3;
         private int star_4 = ( int )limit.star4;
         private int star_5 = ( int )limit.star5;
-        private int price = 0;
+        private UInt64 price = 0;
         private int select_mode = 1;
         private int all_count = 0;
         private bool find = false;
@@ -95,7 +95,7 @@ namespace AkashicRecords
                 return;
             }
 
-            tb_cost_res.Text = "" + ( price += Convert.ToInt32( tb_cost.Text ) * 10 );
+            tb_cost_res.Text = "" + ( price += Convert.ToUInt64( tb_cost.Text ) * 10 );
             cost();
             title_show();
 
@@ -232,7 +232,8 @@ namespace AkashicRecords
                 highakashic_work();
 
             tb_rand2_res.Text = tb_rand3_res.Text = tb_rand4_res.Text = tb_rand5_res.Text = tb_cost_res.Text = "0";
-            this.price = this.all_count = 0;
+            this.price = 0;
+            this.all_count = 0;
             this.find = this.flag = false;
 
             init_akashic( akashic1 );
@@ -348,6 +349,7 @@ namespace AkashicRecords
 
         private void btn_test_Click( object sender, RoutedEventArgs e )
         {
+            if ( !Check_Cost() ) return;
             btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = false;
             while ( !this.find )
             {
@@ -368,6 +370,7 @@ namespace AkashicRecords
 
         private void btn_test_hidden_Click( object sender, RoutedEventArgs e )
         {
+            if ( !Check_Cost() ) return;
             this.flag = true;
             btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = false;
             while ( !this.find )
@@ -391,6 +394,27 @@ namespace AkashicRecords
         {
             Result res = new Result( card, all_count );
             res.Show();
+        }
+
+        private bool Check_Cost()
+        {
+            try
+            {
+                if ( Convert.ToInt32( tb_cost.Text ) >= 0.0 )
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show( label_cost.Content + "가 양수값이 아닙니다.", null, MessageBoxButton.OK, MessageBoxImage.Error );
+                    return false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show( label_cost.Content + "가 계산할 수 있는 범위를 벗어났습니다.", null, MessageBoxButton.OK, MessageBoxImage.Error );
+                return false;
+            }
         }
     }
 }
