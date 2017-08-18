@@ -8,18 +8,48 @@
         Title="뽑기 결과!" Height="760" Width="510" Background="#FF403F3F" ResizeMode="CanMinimize" Icon="Icon/ETC_0_AkashicRecordTransfer.ico">
     <Window.Resources>
         <model:CardView x:Key="CardListView" />
+        <!--<Style TargetType="ListBoxItem">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Red"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Yellow"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Blue"/>
+            </Style.Resources>
+        </Style>-->
     </Window.Resources>
     <Grid>
-        <Grid x:Name="Title" HorizontalAlignment="Left" Height="67.5" Margin="10,10,0,0" VerticalAlignment="Top" Width="474">
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center" >
-                <TextBlock TextAlignment="Center" Height="57.5" TextWrapping="Wrap" Text="총 뽑은 횟수" VerticalAlignment="Center" Width="151.5" Foreground="#FFCDCDCD" FontWeight="Bold" FontSize="24"/>
+        <Grid x:Name="Title" HorizontalAlignment="Left" Height="78" VerticalAlignment="Top" Width="504">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/top.png"/>
+            </Grid.Background>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Bottom" >
+                <TextBlock TextAlignment="Center" Height="57.5" TextWrapping="Wrap" Text="뽑기 사용량" VerticalAlignment="Center" Width="151.5" Foreground="#FFCDCDCD" FontWeight="Bold" FontSize="24"/>
                 <TextBlock x:Name="cnt" TextAlignment="Right" Height="58" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="60" Foreground="#FFCDCDCD" FontWeight="Bold" FontSize="24"/>
                 <TextBlock TextAlignment="Center" Height="58" TextWrapping="Wrap" Text="장" VerticalAlignment="Center" Width="40" Foreground="#FFCDCDCD" FontWeight="Bold" FontSize="24"/>
             </StackPanel>
         </Grid>
         <Grid x:Name="Context" HorizontalAlignment="Left" Height="628.5" Margin="10,82.5,0,0" VerticalAlignment="Top" Width="474">
             <StackPanel>
-                <ListView ItemsSource="{Binding Source={StaticResource CardListView}}" HorizontalAlignment="Left" Height="628.5" VerticalAlignment="Top" Width="474" Background="{x:Null}" BorderBrush="#FF99B92A" Foreground="#FFCFCFCF" SelectionMode="Single">
+                <ListView ItemsSource="{Binding Source={StaticResource CardListView}}" HorizontalAlignment="Left" Height="628.5" VerticalAlignment="Top" Width="474" Background="{x:Null}" BorderBrush="#FF99B92A" Foreground="#FFCFCFCF" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Auto" Name="viewer" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="GreenYellow"/>
+                                    <Setter Property="Foreground" Value="DarkSlateGray"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="FloralWhite"/>
+                                    <Setter Property="Foreground" Value="DarkSlateGray"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                            </Style.Triggers>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="그림" Width="54" >
@@ -36,7 +66,13 @@
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=name}" Header="이름" Width="260" />
+                            <GridViewColumn Header="이름" Width="260">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=name}" Width="Auto" TextAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                             <GridViewColumn Header="개수" Width="75" >
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>

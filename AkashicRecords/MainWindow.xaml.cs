@@ -59,6 +59,8 @@ namespace AkashicRecords
                 else if ( i == ( int )limit.star2 + ( int )limit.star3 + ( int )limit.star4 + ( int )limit.limit + 1 ) { n = 500; k = 1; }
                 card.Add( new AkashicRecords.Card( @"Images/Star/" + ( n + k ) + @".png", CardList.card_list[ i ].star, CardList.card_list[ i ].name ) );
             }
+
+            this.Title = @"아카식레코드 시뮬레이터 - 일반 아카식 모드";
         }
 
         public void cost()  // 천 단위 표시
@@ -87,11 +89,11 @@ namespace AkashicRecords
                     MessageBox.Show( "확률값은 모두 합해 100이 되어야 합니다.", null, MessageBoxButton.OK, MessageBoxImage.Error );
                     return;
                 }
-                Convert.ToInt32( tb_cost.Text );
+                Convert.ToUInt64( tb_cost.Text );
             }
             catch
             {
-                MessageBox.Show( "TextBox 중 올바르지 않은 값이 있습니다.", null, MessageBoxButton.OK, MessageBoxImage.Error );
+                MessageBox.Show( "입력된 값 중에서 올바르지 않은 값이 있습니다.", null, MessageBoxButton.OK, MessageBoxImage.Error );
                 return;
             }
 
@@ -350,7 +352,7 @@ namespace AkashicRecords
         private void btn_test_Click( object sender, RoutedEventArgs e )
         {
             if ( !Check_Cost() ) return;
-            btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = false;
+            CanNotEditAll();
             while ( !this.find )
             {
                 work();
@@ -365,14 +367,14 @@ namespace AkashicRecords
             }
             MessageBox.Show( "5성 카드 발견!", null, MessageBoxButton.OK, MessageBoxImage.Asterisk );
             this.find = false;
-            btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = true;
+            CanEditAll();
         }
 
         private void btn_test_hidden_Click( object sender, RoutedEventArgs e )
         {
             if ( !Check_Cost() ) return;
             this.flag = true;
-            btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = false;
+            CanNotEditAll();
             while ( !this.find )
             {
                 work();
@@ -387,13 +389,15 @@ namespace AkashicRecords
             }
             MessageBox.Show( "5성 히든카드 발견!", null, MessageBoxButton.OK, MessageBoxImage.Asterisk );
             this.find = this.flag = false;
-            btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = true;
+            CanEditAll();
         }
 
         private void Button_Click( object sender, RoutedEventArgs e )
         {
-            Result res = new Result( card, all_count );
-            res.Show();
+            Result res = new Result(card, all_count);
+            windowMask.Visibility = Visibility.Visible;
+            res.ShowDialog();
+            windowMask.Visibility = Visibility.Collapsed;
         }
 
         private bool Check_Cost()
@@ -415,6 +419,18 @@ namespace AkashicRecords
                 MessageBox.Show( label_cost.Content + "가 계산할 수 있는 범위를 벗어났습니다.", null, MessageBoxButton.OK, MessageBoxImage.Error );
                 return false;
             }
+        }
+
+        private void CanNotEditAll()
+        {
+            tb_cost.IsEnabled = tb_rand2.IsEnabled = tb_rand3.IsEnabled = tb_rand4.IsEnabled = tb_rand5.IsEnabled = false;
+            btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = false;
+        }
+
+        private void CanEditAll()
+        {
+            tb_cost.IsEnabled = tb_rand2.IsEnabled = tb_rand3.IsEnabled = tb_rand4.IsEnabled = tb_rand5.IsEnabled = true;
+            btn_10p.IsEnabled = btn_reset.IsEnabled = btn_test.IsEnabled = btn_test_hidden.IsEnabled = true;
         }
     }
 }

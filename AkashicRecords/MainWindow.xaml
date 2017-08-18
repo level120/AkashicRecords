@@ -402,6 +402,11 @@
                 <ImageBrush Stretch="None" ImageSource="button.png"/>
             </Button.Background>
         </Button>
+        <Rectangle x:Name="windowMask" HorizontalAlignment="Left" Height="721" Grid.RowSpan="2" Stroke="Black" VerticalAlignment="Top" Width="1239" Visibility="Collapsed">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF6C6C6C" Opacity="0.3"/>
+            </Rectangle.Fill>
+        </Rectangle>
 
     </Grid>
 </Window>
