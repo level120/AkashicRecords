@@ -110,6 +110,8 @@ namespace AkashicRecords
             card_list.Add( new list( @"[SH] 세듀린", @"★×4" ) );
             card_list.Add( new list( @"[S] 세니아", @"★×4" ) );
             card_list.Add( new list( @"[SH] 세니아", @"★×4" ) );
+            card_list.Add( new list( @"[S] 요미", @"★×4" ) );
+            card_list.Add( new list( @"[SH] 요미", @"★×4" ) );
 
             /* 5성 */
             card_list.Add( new list( @"[S] 빅 퍼펫", @"★×5" ) );
@@ -122,8 +124,6 @@ namespace AkashicRecords
             card_list.Add( new list( @"[SH] 아만다", @"★×5" ) );
             card_list.Add( new list( @"[S] 캐서린", @"★×5" ) );
             card_list.Add( new list( @"[SH] 캐서린", @"★×5" ) );
-            card_list.Add( new list( @"[S] 요미", @"★×5" ) );
-            card_list.Add( new list( @"[SH] 요미", @"★×5" ) );
         }
     }
 

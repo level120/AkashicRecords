@@ -28,11 +28,11 @@ namespace AkashicRecords
         {
             star2 = 62,
             star3 = 12,
-            star4 = 10,
-            star5 = 6,
+            star4 = 12,
+            star5 = 10,
             limit = 6,
-            Unkown = 6
-        }   // 미리엄 제외, Unknown = 아직 미출시
+            Unkown = 1
+        }   // 미리엄 제외, Unknown = Mirium
         public static int SIZE = ( int )limit.limit + ( int )limit.Unkown + ( int )limit.star2 + ( int )limit.star3 + ( int )limit.star4 + ( int )limit.star5;
         private int star_2 = ( int )limit.star2;
         private int star_3 = ( int )limit.star3;
@@ -52,7 +52,7 @@ namespace AkashicRecords
             temp = new CardList();
             card = new List<AkashicRecords.Card>( SIZE );
 
-            for ( int i = 0, n = 200, k = 1; i < SIZE; i++, k++ )
+            for ( int i = 0, n = 200, k = 1; i < SIZE; ++i, ++k )
             {
                 if ( i == ( int )limit.star2 ) { n = 300; k = 1; }
                 else if ( i == ( int )limit.star2 + ( int )limit.star3 + ( int )limit.limit + 1 ) { n = 400; k = 1; }
@@ -158,8 +158,8 @@ namespace AkashicRecords
                 index = res + ( int )limit.star2 + ( int )limit.star3 + ( int )limit.star4 + ( int )limit.limit + 1 - 501;
             }
 
-            card[ index ].count++;
-            all_count++;
+            ++card[ index ].count;
+            ++all_count;
 
             Uri resourceUri = new Uri( url, UriKind.Relative );
             StreamResourceInfo streamInfo = Application.GetResourceStream( resourceUri );

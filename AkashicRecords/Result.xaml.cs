@@ -28,7 +28,7 @@ namespace AkashicRecords
 
             cnt.Text = "" + all_count;
 
-            for ( int i = card.Count - 1; i >= 0; i-- )
+            for ( int i = card.Count - 1; i >= 0; --i )
             {
                 if ( card[ i ].count > 0 )
                 {

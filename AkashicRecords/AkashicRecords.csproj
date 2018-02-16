@@ -338,8 +338,6 @@
     <Resource Include="Images\Star\508.png" />
     <Resource Include="Images\Star\509.png" />
     <Resource Include="Images\Star\510.png" />
-    <Resource Include="Images\Star\511.png" />
-    <Resource Include="Images\Star\512.png" />
     <Resource Include="Images\Star\601.png" />
     <Resource Include="Images\Star\602.png" />
     <Resource Include="Images\Star\603.png" />
@@ -351,8 +349,6 @@
     <Resource Include="Images\508.png" />
     <Resource Include="Images\509.png" />
     <Resource Include="Images\510.png" />
-    <Resource Include="Images\511.png" />
-    <Resource Include="Images\512.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icon\Maze_21_Trash.png" />
@@ -363,6 +359,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\411.png" />
+    <Resource Include="Images\412.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Star\411.png" />
+    <Resource Include="Images\Star\412.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
